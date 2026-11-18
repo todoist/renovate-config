@@ -10,6 +10,36 @@
       "minimumReleaseAge": "0 days"
     },
     {
+      "description": "Automerge compatible bumps of our KMP libraries below 1.0, where only patch is compatible. Their releases are guarded against public API changes.",
+      "matchPackageNames": [
+        "/^com\\.todoist[.:]/",
+        "!com.todoist:dateist-*",
+        "!com.todoist:filterist-*",
+        "!com.todoist:filterist-definitions*",
+        "!com.todoist:genui-*"
+      ],
+      "matchCurrentVersion": "/^0\\./",
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "addLabels": ["🚢 Ship"],
+      "schedule": ["at any time"]
+    },
+    {
+      "description": "Automerge compatible bumps of our KMP libraries from 1.0 on. Their releases are guarded against public API changes.",
+      "matchPackageNames": [
+        "/^com\\.todoist[.:]/",
+        "!com.todoist:dateist-*",
+        "!com.todoist:filterist-*",
+        "!com.todoist:filterist-definitions*",
+        "!com.todoist:genui-*"
+      ],
+      "matchCurrentVersion": "!/^0\\./",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "addLabels": ["🚢 Ship"],
+      "schedule": ["at any time"]
+    },
+    {
       "groupName": "org.jetbrains.kotlin.*",
       "matchPackagePrefixes": [
         "org.jetbrains.kotlin:",
